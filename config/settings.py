@@ -37,6 +37,11 @@ MODEL_ALGO: str = "PPO"            # "PPO" | "SAC" | "A2C"
 TRAIN_TIMESTEPS: int = 200_000
 RETRAIN_INTERVAL_TRADES: int = 100 # Retrain after N new live trades
 
+# ── Training Data ───────────────────────────────────────────
+TRAIN_SYMBOLS: list[str] = ["RELIANCE", "SBIN", "INFY"]
+TRAIN_DAYS: int = 730              # Historical days to fetch
+DATA_SOURCE: str = "ANGEL_API"     # "ANGEL_API" | "LOCAL_CSV" | "SYNTHETIC"
+
 # ── Angel One API ───────────────────────────────────────────
 ANGEL_API_KEY: str = os.getenv("ANGEL_API_KEY", "")
 ANGEL_CLIENT_ID: str = os.getenv("ANGEL_CLIENT_ID", "")

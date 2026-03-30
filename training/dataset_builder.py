@@ -47,6 +47,9 @@ class DatasetBuilder:
                 df[col] = 0.0
 
         arr = df[feature_cols].values.astype(np.float32)
+        # Safety: Ensure no NaNs or Infs leak into training
+        arr = np.nan_to_num(arr, nan=0.0, posinf=1.0, neginf=-1.0)
+        
         split = int(len(arr) * TRAIN_RATIO)
         return arr[:split], arr[split:]
 

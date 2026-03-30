@@ -20,7 +20,7 @@ ENABLE_TRAINING: bool = True       # ← simulation / RL training
 ENABLE_LIVE_TRADING: bool = False  # ← real Angel One orders
 
 # ── Capital & risk ──────────────────────────────────────────
-CAPITAL: float = 100_000.0         # Starting capital (INR)
+CAPITAL: float = 1000        # Starting capital (INR)
 MAX_RISK_PER_TRADE: float = 0.02   # 2 % of capital per trade
 MAX_DAILY_LOSS: float = 0.05       # 5 % daily loss limit
 STOP_LOSS_PCT: float = 0.01        # 1 % stop-loss per position
